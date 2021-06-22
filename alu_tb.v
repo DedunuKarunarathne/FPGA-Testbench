@@ -7,7 +7,7 @@ module alu_tb();
 	reg [15:0] in2; 
 	reg [2:0] alu_op;
 	wire [15:0] alu_out;
-	wire [1:0] z;
+	wire z;
 
     always
         begin
@@ -62,6 +62,16 @@ module alu_tb();
             in1 = 16'd1;
             in2 = 16'd1;
             alu_op = 2'd0;
+            #period;
+				
+				in1 = 16'd10;
+            in2 = 16'd10;
+            alu_op = 2'd1;
+            #period;
+				
+				in1 = 16'd10;
+            in2 = 16'd9;
+            alu_op = 2'd1;
             #period;
 				
 			$stop;
